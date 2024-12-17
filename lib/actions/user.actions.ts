@@ -120,6 +120,7 @@ export const createAccount = async ({
     const { account } = await createSessionClient();
   
     try {
+      //Delete the Currrent Session
       await account.deleteSession("current");
       (await cookies()).delete("appwrite-session");
     } catch (error) {
